@@ -1,0 +1,13 @@
+/**
+ * Require here all your sass includes.
+ */
+@import url('https://fonts.googleapis.com/css?family=Yesteryear');
+
+@import '../../node_modules/include-media/dist/include-media';
+
+@import 'inc/variables';
+@import 'inc/helpers';
+@import 'inc/template';
+
+@import 'components/navbar';
+@import 'components/shot-card';
