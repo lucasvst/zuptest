@@ -3,9 +3,12 @@
 <section class="container">
 
 	<div class="row top-buffer">
-		<div class="col-md-12">
-			<shot-card data-ng-repeat="shot in listCtrl.shots" class="shot-card"></shot-card>
-		</div>
+		<shot-card
+			class="shot-card col-md-4"
+			data-ng-repeat="shot in listCtrl.shots"
+			like-action="listCtrl.like"
+			shot="shot"
+		></shot-card>
 	</div>
 
 </section>

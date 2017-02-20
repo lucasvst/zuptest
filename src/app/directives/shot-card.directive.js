@@ -13,7 +13,10 @@
 
 			restrict: 'E',
 			templateUrl: 'views/shot/_card.html',
-			replace: true,
+			scope: {
+				shot: '=shot',
+				like: '=likeAction'
+			},
 
 			link: function($scope, elem, attrs) {
 			},
