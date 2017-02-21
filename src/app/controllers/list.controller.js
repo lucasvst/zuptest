@@ -28,7 +28,7 @@
 		 * Public functions (exposed by methods).
 		 */
 		function like(shot) {
-			console.log(shot)
+			DribbbleService.like(shot);
 		}
 
 		DribbbleService.getAll();

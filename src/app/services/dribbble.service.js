@@ -23,6 +23,7 @@
 		 * Service methods.
 		 */
 		svc.getAll = getAll;
+		svc.like   = like;
 
 		/**
 		 * Public functions (exposed by methods).
@@ -38,10 +39,33 @@
 
 			ApiService.getShots().then(function(res){
 				angular.copy(res.data, svc.shots);
+				angular.forEach(svc.shots, isLiked)
 				defer.resolve(svc.shots);
 			}, function(res) { console.log(res); defer.reject(res) });
 
 			return defer.promise;
+		}
+
+		function like(shot) {
+
+			var defer = $q.defer();
+
+			ApiService.likeShot(shot.id).then(function(res){
+				console.log(res)
+			}, function(res) { console.log(res); defer.reject(res) });
+
+			return defer.promise;
+		}
+
+		/**
+		 * Private functions
+		 */
+		function isLiked(shot) {
+			ApiService.isLiked(shot.id).then(
+				function(res) {
+					shot.is_liked = true;
+				}
+			);
 		}
 
 		/**

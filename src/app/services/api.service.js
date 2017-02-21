@@ -5,9 +5,9 @@
 		.module('app')
 		.service('ApiService', ApiService);
 
-	ApiService.$inject = ['API', '$http'];
+	ApiService.$inject = ['API', 'HTTPService'];
 
-	function ApiService (API, $http) {
+	function ApiService (API, HTTPService) {
 
 		/**
 		 * Me.
@@ -19,7 +19,17 @@
 		 */
 		self.getShots = getShots;
 		function getShots() {
-			return $http.get(API.shots);
+			return HTTPService.get(API.shots);
+		}
+
+		self.isLiked = isLiked;
+		function isLiked(_id) {
+			return HTTPService.get(API.shots + '/' + _id + '/like');
+		}
+
+		self.likeShot = likeShot;
+		function likeShot(_id) {
+			return HTTPService.post(API.shots + '/' + _id + '/like');
 		}
 
 		/**
