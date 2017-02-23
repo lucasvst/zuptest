@@ -13,6 +13,7 @@ const SOURCES = {
     './node_modules/angular-ui-router/release/angular-ui-router.js',
     './node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js',
     './node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+    './node_modules/ngstorage/ngStorage.min.js'
   ],
   images: ['./src/img/**'],
   scripts: ['./src/app/**/*.js'],

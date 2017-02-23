@@ -5,9 +5,10 @@
   "dependencies": {
     "angular": "^1.6.0",
     "angular-ui-bootstrap": "^2.4.0",
-    "angular-ui-router": "^0.3.2",
+    "angular-ui-router": "^0.4.2",
     "bootstrap": "^3.3.7",
-    "include-media": "^1.4.9"
+    "include-media": "^1.4.9",
+    "ngstorage": "^0.3.11"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

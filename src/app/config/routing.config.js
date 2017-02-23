@@ -16,8 +16,22 @@
 		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
-			.state('home', {
+			
+			.state('login', {
+				url:'/login',
+				anonymous: true,
+				controller: 'LoginController as loginCtrl'
+			})
+			
+			.state('oauth', {
+				url:'/oauth?code&state',
+				anonymous: true,
+				controller: 'OauthController as oauthCtrl'
+			})
+			
+			.state('list', {
 				url:'/',
+				anonymous: false,
 				views: {
 					'': {
 						templateUrl: 'views/shot/list.html',
